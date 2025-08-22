@@ -1,0 +1,38 @@
+label: 'user-acapy'
+endpoint:
+  - 'http://user:8020'
+  - 'ws://user:8005'
+inbound-transport:
+  - [http, 0.0.0.0, 8020]
+  - [ws, 0.0.0.0, 8005]
+outbound-transport:
+  - http
+  - ws
+admin: [0.0.0.0, 8002]
+# TODO: ADMIN_API_KEY
+admin-insecure-mode: true
+#webhook-url: ${WEBHOOK_URL}
+auto-provision: true
+public-invites: true
+wallet-type: askar
+wallet-name: user_wallet
+wallet-key: ${WALLET_KEY}
+wallet-storage-type: sqlite
+wallet-storage-config: '{"path":"/data/user_wallet.db"}'
+multitenant: true
+multitenant-admin: true
+jwt-secret: ${JWT_SECRET}
+auto-provision: true
+no-ledger: true
+auto-accept-invites: true
+auto-accept-requests: true
+auto-respond-messages: true
+auto-respond-credential-offer: true
+auto-respond-credential-request: true
+auto-respond-presentation-request: true
+auto-store-credential: true
+enable-undelivered-queue: true
+emit-new-didcomm-prefix: true
+emit-new-didcomm-mime-type: true
+auto-ping-connection: true
+log-level: info
